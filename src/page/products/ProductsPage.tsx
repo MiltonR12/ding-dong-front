@@ -1,29 +1,17 @@
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button"
+import CardProduct from "@/components/card/CardProduct";
 
 function ProductsPage() {
   return (
-    <div>
-      <AlertDialog>
-
-        <AlertDialogTrigger asChild>
-          <Button variant="outline">Show Dialog</Button>
-        </AlertDialogTrigger>
-
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+    <div className="grid grid-cols-3 gap-5" >
+      {[1, 2, 3, 4].map((item) => (
+        <CardProduct
+          key={item}
+          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwGUgDwWx1UWPdAMsqCjDITifOw4waogTK5w&s"
+          title="Product Title"
+          description="Product Description"
+          price={100}
+        />
+      ))}
     </div>
   );
 }
